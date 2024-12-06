@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"log"
 	"os"
@@ -13,6 +14,20 @@ type AocDay struct {
 	Solve func()
 }
 
+func getFileLines(f string) []string {
+	file, err := os.Open(f)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+	scanner := bufio.NewScanner(file)
+	input := make([]string, 0)
+	for scanner.Scan() {
+		input = append(input, scanner.Text())
+	}
+	return input
+}
+
 func main() {
 	days := []AocDay{
 		{
@@ -22,6 +37,22 @@ func main() {
 		{
 			Day:   2,
 			Solve: Day2,
+		},
+		{
+			Day:   3,
+			Solve: Day3,
+		},
+		{
+			Day:   4,
+			Solve: Day4,
+		},
+		{
+			Day:   5,
+			Solve: Day5,
+		},
+		{
+			Day:   6,
+			Solve: Day6,
 		},
 	}
 
