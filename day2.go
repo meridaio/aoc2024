@@ -18,26 +18,20 @@ func isSafe(levels []Level) bool {
 			return true
 		}
 
+		diff := levels[i] - levels[i+1]
 		if increasing {
-			diff := levels[i+1] - levels[i]
-			if diff > 3 || diff < 1 {
-				return false
-			}
-		} else {
-			diff := levels[i] - levels[i+1]
-			if diff > 3 || diff < 1 {
-				return false
-			}
+			diff = -diff
+		}
+		if diff > 3 || diff < 1 {
+			return false
 		}
 	}
 	return true
 }
 
 func problemDampener(levels []Level) bool {
-	log.Printf("%v", levels)
 	for i := range levels {
 		remd := removeIndex(levels, i)
-		log.Printf("%d %v", i, remd)
 		if isSafe(remd) {
 			return true
 		}
@@ -77,7 +71,6 @@ func Day2() {
 			part1Count = part1Count + 1
 			part2Count = part2Count + 1
 		} else if problemDampener(levels) {
-			log.Printf("%v", levels)
 			part2Count = part2Count + 1
 		}
 	}
