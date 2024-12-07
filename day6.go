@@ -142,7 +142,7 @@ func copyMatrix(matrix [][]rune) [][]rune {
 	return matrixCopy
 }
 
-func Day6() {
+func Day6() (int, int) {
 	input := getFileLines("./day6.txt")
 
 	matrix := make([][]rune, len(input))
@@ -185,6 +185,5 @@ func Day6() {
 		}
 	}
 
-	log.Printf("Part 1: %d", sum)
-	log.Printf("Part 2: %d", p2Sum)
+	return sum, p2Sum
 }

@@ -98,7 +98,7 @@ func parseLine(line string) CalibrationEquation {
 	}
 }
 
-func Day7() {
+func Day7() (int, int) {
 	input := getFileLines("./day7.txt")
 	equations := make([]CalibrationEquation, len(input))
 	for i, line := range input {
@@ -118,6 +118,5 @@ func Day7() {
 			sum2 = sum2 + eq.Sum
 		}
 	}
-	log.Printf("Part 1: %d", sum)
-	log.Printf("Part 2: %d", sum2)
+	return sum, sum2
 }

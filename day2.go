@@ -45,7 +45,7 @@ func removeIndex(arr []int, pos int) []int {
 	return append(ret, arr[pos+1:]...)
 }
 
-func Day2() {
+func Day2() (int, int) {
 	file, err := os.Open("./day2.txt")
 	if err != nil {
 		log.Fatal(err)
@@ -74,6 +74,5 @@ func Day2() {
 			part2Count = part2Count + 1
 		}
 	}
-	log.Printf("Part 1: %d", part1Count)
-	log.Printf("Part 2: %d", part2Count)
+	return part1Count, part2Count
 }

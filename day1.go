@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"log"
 	"os"
 	"slices"
@@ -10,7 +9,7 @@ import (
 	"strings"
 )
 
-func Day1() {
+func Day1() (int, int) {
 	file, err := os.Open("./day1.txt")
 	if err != nil {
 		log.Fatal(err)
@@ -39,8 +38,7 @@ func Day1() {
 	slices.Sort(l)
 	slices.Sort(r)
 
-	fmt.Println(Part1(l, r))
-	fmt.Println(Part2(l, r))
+	return Part1(l, r), Part2(l, r)
 }
 
 func Part1(l []int, r []int) int {

@@ -11,7 +11,7 @@ import (
 
 type AocDay struct {
 	Day   int
-	Solve func()
+	Solve func() (int, int)
 }
 
 func getFileLines(f string) []string {
@@ -66,7 +66,11 @@ func main() {
 			Name:    fmt.Sprintf("day%d", v.Day),
 			Aliases: []string{fmt.Sprint(v.Day)},
 			Action: func(ctx *cli.Context) error {
-				v.Solve()
+				fmt.Printf("Day %d:\n", v.Day)
+				p1, p2 := v.Solve()
+
+				fmt.Printf("\tPart 1: %d\n", p1)
+				fmt.Printf("\tPart 2: %d\n", p2)
 				return nil
 			},
 		}

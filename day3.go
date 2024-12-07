@@ -47,7 +47,7 @@ func calc2(line string, r *regexp.Regexp) (sum int) {
 	return
 }
 
-func Day3() {
+func Day3() (int, int) {
 	file, err := os.Open("./day3.txt")
 	if err != nil {
 		log.Fatal(err)
@@ -87,6 +87,6 @@ func Day3() {
 	}
 	log.Print(p2)
 	part2Sum = part2Sum + calc2(inputStr, r)
-	log.Printf("Part 1: %d", part1Sum)
-	log.Printf("Part 2: %d", part2Sum)
+
+	return part1Sum, part2Sum
 }

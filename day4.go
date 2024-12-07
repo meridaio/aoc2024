@@ -1,7 +1,5 @@
 package main
 
-import "log"
-
 func d4p1TestDir(matrix [][]rune, x, y, xdir, ydir int) bool {
 	xmas := []rune("XMAS")
 	for xmasPos := 0; xmasPos < len(xmas); xmasPos++ {
@@ -57,7 +55,7 @@ func d4p2Test(matrix [][]rune, x, y int) bool {
 	return false
 }
 
-func Day4() {
+func Day4() (int, int) {
 	input := getFileLines("./day4.txt")
 
 	matrix := make([][]rune, len(input))
@@ -85,6 +83,5 @@ func Day4() {
 			}
 		}
 	}
-	log.Printf("Part 1: %d", sum)
-	log.Printf("Part 2: %d", p2sum)
+	return sum, p2sum
 }

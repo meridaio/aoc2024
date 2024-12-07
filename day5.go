@@ -32,7 +32,7 @@ func fix(rules [][]string, print []string) []string {
 	}
 }
 
-func Day5() {
+func Day5() (int, int) {
 	input := getFileLines("./day5.txt")
 
 	rules := make([][]string, 0)
@@ -67,6 +67,5 @@ func Day5() {
 			}
 		}
 	}
-	log.Printf("Part 1: %d", sum)
-	log.Printf("Part 2: %d", p2sum)
+	return sum, p2sum
 }
