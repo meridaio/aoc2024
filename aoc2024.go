@@ -58,6 +58,10 @@ func main() {
 			Day:   7,
 			Solve: Day7,
 		},
+		{
+			Day:   8,
+			Solve: Day8,
+		},
 	}
 
 	commands := make([]*cli.Command, len(days))
